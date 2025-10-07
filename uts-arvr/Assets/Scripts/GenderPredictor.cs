@@ -50,7 +50,8 @@ public class GenderPredictor : MonoBehaviour
     private bool isRequestInProgress = false;
 
     // --- Variabel Baru untuk Fungsi Lock ---
-    private bool isLocked = false;
+    // private bool isLocked = false;
+    public bool IsLocked { get; private set; } = false;
     
     // Variabel ini akan menyimpan hasil yang dikunci. 
     public string LockedGender { get; private set; }
@@ -67,7 +68,7 @@ public class GenderPredictor : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(LockedGender) && LockedGender != "N/A")
         {
-            isLocked = true;
+            IsLocked = true;
             resultText.text = $"LOCKED: {LockedGender}";
             Debug.Log($"Prediction Locked! Final Gender: {LockedGender}");
         }
@@ -81,7 +82,7 @@ public class GenderPredictor : MonoBehaviour
     {
         while (true)
         {
-            if (!isLocked && !isRequestInProgress)
+            if (!IsLocked && !isRequestInProgress)
             {
                 StartCoroutine(RunFullPredictionFlow());
             }
@@ -201,7 +202,7 @@ public class GenderPredictor : MonoBehaviour
 
         LockedGender = bestLabel;
 
-        if (!isLocked)
+        if (!IsLocked)
         {
             resultText.text = $"{bestLabel} ({(bestConfidence * 100):F1}%)";
         }
