@@ -482,7 +482,7 @@ public class FilterManager : MonoBehaviour
     public ARFaceManager faceManager;
 
     [Header("Konfigurasi API")]
-    public string baseApiUrl = "http://10.157.147.250:3000/marker/"; // JANGAN LUPA TRAILING SLASH '/'
+    public string baseApiUrl = "http://10.157.147.250:3000/markers/";
 
     private GameObject currentFilterInstance;
     private Transform currentFaceTransform;
@@ -526,12 +526,12 @@ public class FilterManager : MonoBehaviour
         Debug.Log("Gender locked: " + lockedGender + ". Updating buttons.");
 
         // Jika Pria, aktifkan Tombol 1. Jika Wanita, aktifkan Tombol 2.
-        if (lockedGender == "Male") // Sesuaikan string ini jika hasil dari server berbeda (misal: "male")
+        if (lockedGender == "Male") 
         {
             buttonFilter1.interactable = true;
             buttonFilter2.interactable = false;
         }
-        else if (lockedGender == "Female") // Sesuaikan string ini jika perlu
+        else if (lockedGender == "Female") 
         {
             buttonFilter1.interactable = false;
             buttonFilter2.interactable = true;
@@ -580,7 +580,7 @@ public class FilterManager : MonoBehaviour
                     if (prefabToLoad != null)
                     {
                         currentFilterInstance = Instantiate(prefabToLoad, currentFaceTransform);
-                        currentFilterInstance.transform.localPosition = new Vector3(0, 0.1f, 0); // Sesuaikan posisi jika perlu
+                        currentFilterInstance.transform.localPosition = new Vector3(0, 0.5f, 0); // Sesuaikan posisi 
                         currentFilterInstance.transform.localRotation = Quaternion.identity;
                         Debug.Log($"Filter '{filterData.name}' berhasil diterapkan.");
                     }
