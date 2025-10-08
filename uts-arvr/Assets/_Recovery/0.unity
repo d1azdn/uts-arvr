@@ -689,19 +689,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 444235183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1636572262}
-        m_TargetAssemblyTypeName: FilterManager, Assembly-CSharp
-        m_MethodName: OnFilterButtonPressed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: accessory
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &444235183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,19 +1691,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1414791798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1636572262}
-        m_TargetAssemblyTypeName: FilterManager, Assembly-CSharp
-        m_MethodName: OnFilterButtonPressed
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: hat
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1414791798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,7 +1763,11 @@ MonoBehaviour:
   buttonFilter1: {fileID: 1414791797}
   buttonFilter2: {fileID: 444235182}
   faceManager: {fileID: 1875695220}
-  baseApiUrl: http://10.157.147.250:3000/marker/
+  button1Title: Topi
+  button1Type: hat
+  button2Title: Aksesoris
+  button2Type: accessory
+  baseApiUrl: http://10.157.147.250:3000/filters
 --- !u!4 &1636572263
 Transform:
   m_ObjectHideFlags: 0
